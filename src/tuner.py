@@ -16,6 +16,7 @@ def find_best_hyperparameters_with_optuna(X, y, folds, param_space, metric, mode
         metric (str or callable): The name of the evaluation metric to optimize, or a callable object that takes two
             arguments (true labels and predicted labels) and returns a scalar value.
         model: The machine learning model to optimize.
+        n_trials (int): Number of trials will be performed by Optuna.
 
     Returns:
         A dictionary of the best hyperparameters found by the hyperparameter search.

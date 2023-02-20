@@ -1,19 +1,17 @@
 import json
 
-import pandas as pd
-
 
 def encode_categorical_columns(df, cat_cols, map_file):
     """
     Encode categorical columns in a Pandas dataframe and save mappings as a JSON file.
 
     Parameters:
-    df (Pandas dataframe): the dataframe to encode
-    cat_cols (list of str): the names of the categorical columns to encode
-    map_file (str): the file name to save the mappings as a JSON file
+        df (Pandas dataframe): the dataframe to encode
+        cat_cols (list of str): the names of the categorical columns to encode
+        map_file (str): the file name to save the mappings as a JSON file
 
     Returns:
-    df (Pandas dataframe): the encoded dataframe
+       df (Pandas dataframe): the encoded dataframe
     """
 
     # Create an empty dictionary to hold the mappings
@@ -45,11 +43,11 @@ def decode_categorical_columns(df, map_file):
     Decode categorical columns in a Pandas dataframe using mappings from a JSON file.
 
     Parameters:
-    df (Pandas dataframe): the dataframe to decode
-    map_file (str): the file name to load the mappings from
+        df (Pandas dataframe): the dataframe to decode
+        map_file (str): the file name to load the mappings from
 
     Returns:
-    df (Pandas dataframe): the decoded dataframe
+        df (Pandas dataframe): the decoded dataframe
     """
 
     # Load the mappings from the JSON file
