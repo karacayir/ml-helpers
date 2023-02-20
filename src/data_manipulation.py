@@ -1,5 +1,7 @@
-import pandas as pd
 import json
+
+import pandas as pd
+
 
 def encode_categorical_columns(df, cat_cols, map_file):
     """
@@ -19,7 +21,6 @@ def encode_categorical_columns(df, cat_cols, map_file):
 
     # Loop through each categorical column
     for col in cat_cols:
-
         # Get the unique values in the column
         values = df[col].unique()
 
@@ -33,10 +34,11 @@ def encode_categorical_columns(df, cat_cols, map_file):
         df[col] = df[col].map(mapping)
 
     # Save the mappings as a JSON file
-    with open(map_file, 'w') as f:
+    with open(map_file, "w") as f:
         json.dump(mappings, f)
 
     return df
+
 
 def decode_categorical_columns(df, map_file):
     """
@@ -51,12 +53,11 @@ def decode_categorical_columns(df, map_file):
     """
 
     # Load the mappings from the JSON file
-    with open(map_file, 'r') as f:
+    with open(map_file, "r") as f:
         mappings = json.load(f)
 
     # Loop through each categorical column
     for col, mapping in mappings.items():
-
         # Invert the mapping so that the integer codes map back to the original values
         inv_mapping = {i: value for value, i in mapping.items()}
 

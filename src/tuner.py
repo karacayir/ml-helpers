@@ -1,10 +1,9 @@
-import optuna
 import numpy as np
+import optuna
 from sklearn.model_selection import cross_val_score
 
 
 def find_best_hyperparameters_with_optuna(data, folds, param_space, metric, model):
-
     """
     Uses Optuna to find the best hyperparameters for a machine learning model.
 
